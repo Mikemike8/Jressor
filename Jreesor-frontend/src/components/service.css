@@ -1,0 +1,13 @@
+.custom-swiper-pagination .swiper-pagination-bullet {
+  width: 16px;   /* make bullet wider */
+  height: 16px;  /* make bullet taller */
+  background-color: #444; /* optional: change bullet color */
+  opacity: 1;    /* make sure it's fully visible */
+  margin: 0 6px; /* optional: spacing between dots */
+}
+
+.custom-swiper-pagination .swiper-pagination-bullet-active {
+  background-color: #1f2937; /* a darker color or highlight */
+  transform: scale(1.3);     /* make active bullet bigger */
+  transition: transform 0.3s ease;
+}
