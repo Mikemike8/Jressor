@@ -30,11 +30,13 @@ export const Nav = () => {
 
   return (
     <nav
-      className={`fixed w-full z-50 border-b border-black/10 overflow-hidden backdrop-blur-sm transition-transform duration-300 ${
+      className={`fixed w-full z-50 border-b border-black/10 overflow-hidden backdrop-blur-md transition-transform duration-300 ${
         showNavbar ? 'translate-y-0' : '-translate-y-full'
       }`}
-      style={{
-        background: pastHero ? 'black' : 'transparent', // Make background black after hero
+    style={{
+        background: pastHero
+          ? 'rgba(0, 0, 0, 0.9)'  // lighter dark transparent after hero
+          : 'rgba(0, 0, 0, 0.5)', // darker semi-transparent on hero
         fontFamily: "'Garamond', serif",
       }}
     >

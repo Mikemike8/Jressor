@@ -29,7 +29,7 @@ const Hero = () => {
       {/* Text content */}
       <div className="relative z-10 max-w-2xl px-4 pt-15">
         <h1
-          className="text-4xl sm:text-5xl font-serif hover:text-gray-300 text-white tracking-widest"
+          className="text-4xl sm:text-5xl font-serif  text-white tracking-widest"
           style={{
             textShadow: "1px 1px 4px rgba(0, 0, 0, 0.4)", 
           }}
