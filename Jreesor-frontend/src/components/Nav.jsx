@@ -37,7 +37,7 @@ const handleMouseLeave = () => {
         showNavbar ? "translate-y-0" : "-translate-y-full"
       }`}
        style={{
-    background: pastHero ? "#000" : "#A19A8A", // Light background for pastHero true, dark background otherwise
+    background: pastHero ? "#2C2A28" : "#A19A8A", // Light background for pastHero true, dark background otherwise
     color: pastHero ? "#FFF" : "#FFF", 
     fontFamily: "'Garamond', serif",
   }}
