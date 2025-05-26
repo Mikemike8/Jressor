@@ -36,18 +36,17 @@ const handleMouseLeave = () => {
       className={`fixed w-full z-50 border-b border-black/10  backdrop-blur-md transition-transform duration-300 ${
         showNavbar ? "translate-y-0" : "-translate-y-full"
       }`}
-      style={{
-        background: pastHero
-          ? "rgba(0, 0, 0, 0.9)"
-          : "rgba(0, 0, 0, 0.5)",
-        fontFamily: "'Garamond', serif",
-      }}
+       style={{
+    background: pastHero ? "#000" : "#A19A8A", // Light background for pastHero true, dark background otherwise
+    color: pastHero ? "#FFF" : "#FFF", 
+    fontFamily: "'Garamond', serif",
+  }}
     >
       <div className="max-w-[2000px] mx-auto px-4 sm:px-8">
         <div className="flex justify-between items-center h-12 relative">
           {/* Logo */}
           <div className="flex flex-row items-center text-center" >
-            <span className="text-2xl tracking-widest   font-serif" style={{ color: '#C9C7C4' }}  >
+            <span className="text-2xl tracking-widest   font-serif"  >
               REESOR{" "}
               <span className="text-xs align-top ml-1 tracking-normal font-sans ">
                 ASSOCIATES
@@ -56,7 +55,7 @@ const handleMouseLeave = () => {
           </div>
 
           {/* Links */}
-          <ul className="flex space-x-8 text-white font-semibold text-base relative" style={{ color: '#C9C7C4' }}>
+          <ul className="flex space-x-8 text-white font-semibold text-base relative" >
             <li className="cursor-pointer transition">HOME</li>
             <li className="cursor-pointer transition">ABOUT</li>
 
