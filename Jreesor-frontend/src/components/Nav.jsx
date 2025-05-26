@@ -1,7 +1,20 @@
-import React, { useEffect, useState } from 'react';
-import { FaUser } from 'react-icons/fa';
+import { useState, useEffect, useCallback, useRef } from "react";
+import { FaUser } from "react-icons/fa";
 
 export const Nav = () => {
+const [popoverActive, setPopoverActive] = useState(false);
+const popoverRef = useRef(null);
+
+// Show popover on hover
+const handleMouseEnter = () => {
+  setPopoverActive(true);
+};
+
+// Hide popover on mouse leave
+const handleMouseLeave = () => {
+  setPopoverActive(false);
+};
+  // Navbar hide/show on scroll
   const [showNavbar, setShowNavbar] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
   const [pastHero, setPastHero] = useState(false);
@@ -9,65 +22,84 @@ export const Nav = () => {
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
-
-      // Show/hide navbar
-      if (currentScrollY < lastScrollY) {
-        setShowNavbar(true);
-      } else {
-        setShowNavbar(false);
-      }
-
-      // Check if past hero
-      const heroHeight = window.innerHeight; // assumes hero takes full screen height
-      setPastHero(currentScrollY > heroHeight);
-
+      setShowNavbar(currentScrollY < lastScrollY);
+      setPastHero(currentScrollY > window.innerHeight);
       setLastScrollY(currentScrollY);
     };
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, [lastScrollY]);
 
   return (
     <nav
-      className={`fixed w-full z-50 border-b border-black/10 overflow-hidden backdrop-blur-md transition-transform duration-300 ${
-        showNavbar ? 'translate-y-0' : '-translate-y-full'
+      className={`fixed w-full z-50 border-b border-black/10  backdrop-blur-md transition-transform duration-300 ${
+        showNavbar ? "translate-y-0" : "-translate-y-full"
       }`}
-    style={{
+      style={{
         background: pastHero
-          ? 'rgba(0, 0, 0, 0.9)'  // lighter dark transparent after hero
-          : 'rgba(0, 0, 0, 0.5)', // darker semi-transparent on hero
+          ? "rgba(0, 0, 0, 0.9)"
+          : "rgba(0, 0, 0, 0.5)",
         fontFamily: "'Garamond', serif",
       }}
     >
       <div className="max-w-[2000px] mx-auto px-4 sm:px-8">
-        <div className="flex justify-between items-center h-12">
-          {/* Left side: Logo */}
-          <div className="flex flex-row items-center text-center">
-            <span className="text-2xl tracking-widest text-white hover:text-gray-700 font-serif">
-              REESOR{' '}
-              <span className="text-xs align-top ml-1 tracking-normal font-sans text-white">
+        <div className="flex justify-between items-center h-12 relative">
+          {/* Logo */}
+          <div className="flex flex-row items-center text-center" >
+            <span className="text-2xl tracking-widest   font-serif" style={{ color: '#C9C7C4' }}  >
+              REESOR{" "}
+              <span className="text-xs align-top ml-1 tracking-normal font-sans ">
                 ASSOCIATES
               </span>
             </span>
           </div>
 
-          {/* Middle: Nav links */}
-          <ul className="flex space-x-8 text-white font-semibold text-base">
-            <li className="cursor-pointer hover:text-gray-700 transition">HOME</li>
-            <li className="cursor-pointer hover:text-gray-700 transition">ABOUT</li>
-            <li className="cursor-pointer hover:text-gray-700 transition">PLACE DEBT</li>
+          {/* Links */}
+          <ul className="flex space-x-8 text-white font-semibold text-base relative" style={{ color: '#C9C7C4' }}>
+            <li className="cursor-pointer transition">HOME</li>
+            <li className="cursor-pointer transition">ABOUT</li>
+
+            {/* Popover */}
+          <li
+  className="relative"
+  ref={popoverRef}
+  onMouseEnter={() => setPopoverActive(true)}
+  onMouseLeave={() => setPopoverActive(false)}
+>
+  <div
+    className="cursor-pointer  transition  font-semibold text-base flex items-center space-x-1" 
+  >
+    <span>PLACE</span>
+    <span className="w-0 h-0 border-l-4 border-l-transparent border-r-4 border-r-transparent border-t-4 border-t-white"></span>
+  </div>
+
+  {popoverActive && (
+    <div className="absolute left-0 mt-8 w-32 bg-black/50 rounded shadow-lg z-50">
+      <ul className="py-1 text-white">
+        <li className="px-4 py-2 hover:text-gray-300 hover:bg-black/50 cursor-pointer">
+          Place dbt.
+        </li>
+        <li className="px-4 py-2 hover:text-gray-300 hover:bg-black/50 cursor-pointer">
+          View dbt.
+        </li>
+      </ul>
+    </div>
+  )}
+</li>
+
+
             <li className="cursor-pointer hover:text-gray-700 transition">
               CARRIER VS. GROWING THREAT
             </li>
           </ul>
 
-          {/* Right: User icon */}
+          {/* User icon */}
           <button
             aria-label="Contact"
             className="text-white text-xl opacity-80 hover:text-gray-700 transition-opacity duration-200 focus:outline-none"
             type="button"
-            style={{ fontWeight: '300' }}
+            style={{ fontWeight: "300" }}
           >
             <FaUser />
           </button>

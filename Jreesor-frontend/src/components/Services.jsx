@@ -6,7 +6,7 @@ import { Navigation, Pagination, Autoplay } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
-
+import "./service.css"
 import camp from "../assets/alexandre-dinaut-RLgk20TT_6Y-unsplash.jpg";
 import point from "../assets/photo-1603738115219-d2d66074819d.avif";
 import legal from "../assets/pexels-photo-327533.jpeg";
@@ -33,8 +33,9 @@ const services = [
 const ServicesOverview = () => {
       const paginationRef = useRef(null);
   return (
-  <section className="mx-auto px-6 py-16 max-w-5xl">
-      <h2 className="text-4xl md:text-5xl font-serif text-center mb-10 tracking-wide">
+  <section className="mx-auto px-6 py-32 max-w-full bg-gradient-original ">
+    
+      <h2 className="text-5xl md:text-5xl font-serif text-center mb-10 tracking-wide">
         Reliable expertise to drive your greatest success
       </h2>
 
@@ -58,7 +59,7 @@ const ServicesOverview = () => {
           swiper.pagination.init();
           swiper.pagination.update();
         }}
-        className="relative rounded-lg shadow-lg"
+        className="relative max-w-5xl rounded-lg shadow-lg"
       >
         {services.map((service, index) => (
         

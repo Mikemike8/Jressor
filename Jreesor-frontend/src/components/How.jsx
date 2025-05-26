@@ -40,9 +40,9 @@ const HowItWorks = () => {
   ];
 
   return (
-    <section className="max-w-5xl mx-auto px-6 py-16">
-      <h2 className="text-3xl font-serif text-center mb-12 tracking-wide">
-        How It Works 
+    <section className="max-w-full mx-auto px-6 py-32 bg-dark-gradient">
+      <h2 className="text-5xl font-serif text-center mb-12 tracking-wide">
+        Key benefits that set us apart from other ferms
       </h2>
       <div className="relative flex flex-col md:flex-row   justify-between items-center">
         {steps.map((step, index) => (
