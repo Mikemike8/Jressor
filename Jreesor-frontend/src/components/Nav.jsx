@@ -69,7 +69,7 @@ const handleMouseLeave = () => {
   <div
     className="cursor-pointer  transition  font-semibold text-base flex items-center space-x-1" 
   >
-    <span>PLACE</span>
+    <span>SERVICES</span>
     <span className="w-0 h-0 border-l-4 border-l-transparent border-r-4 border-r-transparent border-t-4 border-t-white"></span>
   </div>
 
@@ -77,10 +77,10 @@ const handleMouseLeave = () => {
     <div className="absolute left-0 mt-8 w-32 bg-black/50 rounded shadow-lg z-50">
       <ul className="py-1 text-white">
         <li className="px-4 py-2 hover:text-gray-300 hover:bg-black/50 cursor-pointer">
-          Place dbt.
+          PLACE dbt.
         </li>
         <li className="px-4 py-2 hover:text-gray-300 hover:bg-black/50 cursor-pointer">
-          View dbt.
+          VIEW dbt.
         </li>
       </ul>
     </div>

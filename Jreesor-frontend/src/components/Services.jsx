@@ -33,7 +33,7 @@ const services = [
 const ServicesOverview = () => {
       const paginationRef = useRef(null);
   return (
-  <section className="mx-auto px-6 py-32 max-w-full bg-gradient-original ">
+  <section className="mx-auto px-6 py-32 max-w-full  bg-dark-gradient">
     
       <h2 className="text-5xl md:text-5xl font-serif text-center mb-10 tracking-wide">
         Reliable expertise to drive your greatest success

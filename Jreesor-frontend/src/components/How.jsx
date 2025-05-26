@@ -40,7 +40,7 @@ const HowItWorks = () => {
   ];
 
   return (
-    <section className="max-w-full mx-auto px-6 py-32 bg-dark-gradient">
+    <section className="max-w-full mx-auto px-6 py-32 bg-gradient-original ">
       <h2 className="text-5xl font-serif text-center mb-12 tracking-wide">
         Key benefits that set us apart from other ferms
       </h2>
