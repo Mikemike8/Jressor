@@ -3,7 +3,7 @@ import React from 'react'
 export const Who = () => {
   return (
     <>
-    <section className="py-32 px-4 max-w-full mx-auto text-center  section-2 "  >
+    <section  loading="lazy"  className="py-32 px-4 max-w-full mx-auto text-center  section-2 "  >
         <span
   className="absolute bottom-0 left-0 w-full h-20"
   style={{
