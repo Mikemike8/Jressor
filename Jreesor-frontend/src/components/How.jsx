@@ -1,4 +1,5 @@
 import React from 'react';
+import './service.css'; 
 
 const CustomSVGIcon = () => (
   <span style={{ fontSize: "2.5rem" }} className="material-symbols-outlined">monitoring</span>

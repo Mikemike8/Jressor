@@ -1,6 +1,6 @@
 import React from 'react';
-import point from "../assets/REESORGPXt.svg";
-
+import point from "../assets/Framee.jpg";
+import './service.css'; 
 const Hero = () => {
   return (
     <section
@@ -11,7 +11,7 @@ const Hero = () => {
     >
       {/* Button */}
       <button
-        className="absolute bottom-22 left-12 px-4 py-2 bg-[#A19A8A] text-white font-bold rounded shadow-md hover:bg-[#8d8679] transition-colors duration-300"
+        className="absolute bottom-16 left-12 px-4 py-2 text-white font-bold rounded hover:text-gray-400 cursor transition-colors duration-300"
       >
         LEARN MORE
       </button>

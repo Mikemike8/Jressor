@@ -1,5 +1,8 @@
 import { useState, useEffect, useCallback, useRef } from "react";
 import { FaUser } from "react-icons/fa";
+import './service.css'; 
+
+import { Link } from 'react-router-dom';
 
 export const Nav = () => {
 const [popoverActive, setPopoverActive] = useState(false);
@@ -37,7 +40,7 @@ const handleMouseLeave = () => {
         showNavbar ? "translate-y-0" : "-translate-y-full"
       }`}
        style={{
-    background: pastHero ? "#2C2A28" : "#A19A8A", // Light background for pastHero true, dark background otherwise
+    background: pastHero ? "#A19A8A" : "#2C2A28", // Light background for pastHero true, dark background otherwise
     color: pastHero ? "#FFF" : "#FFF", 
     fontFamily: "'Garamond', serif",
   }}
@@ -56,9 +59,14 @@ const handleMouseLeave = () => {
 
           {/* Links */}
           <ul className="flex space-x-8 text-white font-semibold text-base relative" >
-            <li className="cursor-pointer transition">HOME</li>
-            <li className="cursor-pointer transition">ABOUT</li>
 
+<li className="cursor-pointer transition">
+  <Link to="/" className="no-underline text-inherit">HOME</Link>
+</li>
+          
+<li className="cursor-pointer transition">
+  <Link to="/about" className="no-underline text-inherit">About</Link>
+</li>
             {/* Popover */}
           <li
   className="relative"
@@ -100,7 +108,7 @@ const handleMouseLeave = () => {
             type="button"
             style={{ fontWeight: "300" }}
           >
-            <FaUser />
+            <Link to="/contact" className="no-underline text-inherit"> <FaUser /> </Link>
           </button>
         </div>
       </div>

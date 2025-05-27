@@ -1,24 +1,22 @@
-import { useState } from 'react'
+import React from 'react';
+import { Routes, Route } from 'react-router-dom';
+import { Home } from './components/Home';
+import { Nav } from './components/Nav';
+import { About } from './components/About';
+import { Contact } from './components/Contact';
 
-import './App.css'
-import { Nav } from './components/Nav'
-import Hero from './components/Hero'
-import { Who } from './components/Who'
-import ServicesOverview from './components/Services'
-import HowItWorks from './components/How'
 
 function App() {
-
   return (
-    <>
-<Nav/>
-<Hero/>
-<Who/>
-<ServicesOverview/>
-<HowItWorks/>
-
-    </>
-  )
+    <div>
+    <Nav/>
+      <Routes>
+        <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+           <Route path="/contact" element={<Contact />} />
+      </Routes>
+    </div>
+  );
 }
 
-export default App
+export default App;

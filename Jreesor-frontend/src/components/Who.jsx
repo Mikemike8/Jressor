@@ -1,4 +1,5 @@
 import React from 'react'
+import './service.css'; 
 
 export const Who = () => {
   return (
@@ -6,9 +7,7 @@ export const Who = () => {
     <section  loading="lazy"  className="py-32 px-4 max-w-full mx-auto text-center  section-2 "  >
         <span
   className="absolute bottom-0 left-0 w-full h-20"
-  style={{
-  background: "linear-gradient(to bottom, rgba(255,255,255,0) 0%, rgba(120, 110, 90, 1) 100%)"
-}}
+
 ></span>
   <h2 className="text-5xl font-serif text-black mb-4">Who We Are</h2>
   <p className="text-black/70 font-sans text-lg mb-4">
