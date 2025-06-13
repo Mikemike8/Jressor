@@ -1,0 +1,31 @@
+
+
+.place-page footer {
+  background-color: #000 !important;
+  color: #fff !important;
+}
+
+.font-garamond {
+  font-family: 'EB Garamond', serif;
+}
+
+.image-gradient {
+  top: 0;
+  left: 0; 
+  position: absolute;
+  opacity: 0.5;
+  z-index: 0;
+}
+
+
+
+.layer-blur {
+  height: 0;
+  width: 30rem;
+  position: absolute;
+  top: 20%;
+  left:0;
+  z-index: 0;
+  box-shadow: 0 0 700px 15px white;
+  
+}

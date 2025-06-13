@@ -33,9 +33,9 @@ const services = [
 const ServicesOverview = () => {
       const paginationRef = useRef(null);
   return (
-  <section  loading="lazy"  className="mx-auto px-6 py-32 max-w-full  bg-dark-gradient">
+  <section  loading="lazy"  className="mx-auto px-6 py-32 max-w-full  bg-[#2C2A28]">
     
-      <h2 className="text-5xl md:text-5xl font-serif text-center mb-10 tracking-wide">
+      <h2 className="text-5xl md:text-5xl text-white font-ebgaramond font-serif text-center mb-10 tracking-wide">
         Reliable expertise to drive your greatest success
       </h2>
 
@@ -78,14 +78,14 @@ const ServicesOverview = () => {
     style={{ height: "25%" }} // covers 35% height of the card
   >
     <h3
-      className="text-white font-semibold"
+      className="text-white font-ebgaramond"
       style={{ fontSize: "1.75rem", lineHeight: 1.3 }}
     >
       {service.title}
     </h3>
     <p
-      className="text-white"
-      style={{ fontSize: "1rem", lineHeight: 1.6, marginTop: "0.5rem" }}
+      className="text-white font-ebgaramond"
+      style={{  fontSize: "1rem", lineHeight: 1.6, marginTop: "0.5rem" }}
     >
       {service.description}
     </p>
