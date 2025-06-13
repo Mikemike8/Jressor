@@ -93,6 +93,18 @@ app.get('/api/ContactForm', async (req, res) => {
 });
 
 
+// GET endpoint to fetch all debtors and their rank
+app.get('/api/debtors', async (req, res) => {
+  try {
+    const debtors = await Debtor.find().sort({ Rank: 1 });  // Sorted by Rank, lowest to highest
+    res.status(200).json(debtors);
+  } catch (error) {
+    console.error('Error:', error.message);
+    res.status(500).json({ error: 'Failed to fetch debtors.' });
+  }
+});
+
+
 
 
 
