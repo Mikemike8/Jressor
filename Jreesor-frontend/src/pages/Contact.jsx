@@ -29,7 +29,7 @@ export const Contact = () => {
     e.preventDefault();
 
     try {
-      const response = await axios.post('http://localhost:5010/api/ContactForm', formData);
+      const response = await axios.post('https://backendressor.onrender.com/api/ContactForm', formData);
       alert('Contact successfully sent!');
       setFormData({ Name: '', EmailTwo: '', TextBox: '' }); // reset form
     } catch (error) {
