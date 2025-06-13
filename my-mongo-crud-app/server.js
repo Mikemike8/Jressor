@@ -23,20 +23,9 @@ app.use(express.urlencoded({ extended: true }));
 app.use('/files', express.static('files'));
 
 app.use(cors({
-  origin: function(origin, callback) {
-    // Allow requests with no origin (like curl, Postman, mobile apps)
-    if (!origin) return callback(null, true);
-
-    // Allow your specific frontend origin
-    if (origin === 'https://jressor.onrender.com') {
-      return callback(null, true);
-    }
-
-    // Otherwise, block the request
-    callback(new Error('Not allowed by CORS'));
-  },
-  methods: ['GET', 'POST', 'PUT', 'DELETE'],
-  credentials: true
+  origin: 
+    'https://jressor.onrender.com', 
+  credentials: true,  // Allow cookies if necessary
 }));
 
 
