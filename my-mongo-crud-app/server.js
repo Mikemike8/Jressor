@@ -17,7 +17,7 @@ const PORT = process.env.PORT || 5010;
 
 // ✅ Middleware
 app.use(cors({
-  origin: ['https://jressor.onrender.com','https://reesorandasociatestestserver.onrender.com/api/debtors'],// Your Vite frontend
+  origin: 'https://jressor.onrender.com',// Your Vite frontend
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   credentials: true
 }));
@@ -112,16 +112,6 @@ app.post('/api/debtor', async (req, res) => {
 
 
 
-
-app.get('/api/debtors', async (req, res) => {
-  try {
-    const debtors = await Debtor.find().sort({ Rank: 1 });
-    res.status(200).json(debtors);
-  } catch (error) {
-    console.error('Error:', error.message);
-    res.status(500).json({ error: 'Failed to fetch debtors.' });
-  }
-});
 
 // --- File Upload API ---
 const storage = multer.diskStorage({
