@@ -15,6 +15,13 @@ const Contact = require('./models/ContactBack');
 const app = express();
 const PORT = process.env.PORT || 5010;
 
+
+app.use(helmet());
+app.use(bodyParser.json());
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+app.use('/files', express.static('files'));
+
 app.use(cors({
   origin: function(origin, callback) {
     // Allow requests with no origin (like curl, Postman, mobile apps)
@@ -32,12 +39,6 @@ app.use(cors({
   credentials: true
 }));
 
-
-app.use(helmet());
-app.use(bodyParser.json());
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
-app.use('/files', express.static('files'));
 
 // MongoDB connection
 const mongoUrl = "mongodb+srv://mike96:lilmike800@cluster0.ylle5px.mongodb.net/ReesorEmaildata?retryWrites=true&w=majority";
