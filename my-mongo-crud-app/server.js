@@ -15,12 +15,23 @@ const Contact = require('./models/ContactBack');
 const app = express();
 const PORT = process.env.PORT || 5010;
 
-// ✅ Middleware
 app.use(cors({
-  origin: 'https://jressor.onrender.com',// Your Vite frontend
+  origin: function(origin, callback) {
+    // Allow requests with no origin (like curl, Postman, mobile apps)
+    if (!origin) return callback(null, true);
+
+    // Allow your specific frontend origin
+    if (origin === 'https://jressor.onrender.com') {
+      return callback(null, true);
+    }
+
+    // Otherwise, block the request
+    callback(new Error('Not allowed by CORS'));
+  },
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   credentials: true
 }));
+
 
 app.use(helmet());
 app.use(bodyParser.json());
