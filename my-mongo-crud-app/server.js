@@ -17,7 +17,7 @@ const PORT = process.env.PORT || 5010;
 
 // ✅ Middleware
 app.use(cors({
-  origin: 'https://jressor.onrender.com', // Your Vite frontend
+  origin: ['https://jressor.onrender.com','https://reesorandasociatestestserver.onrender.com/api/debtors'],// Your Vite frontend
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   credentials: true
 }));
