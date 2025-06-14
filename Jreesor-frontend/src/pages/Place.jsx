@@ -129,7 +129,7 @@ formDataToUpload.append('metadata', `fullName=${formData.fullName}|companyName=$
       </section>
 
       {/* Right side: form */}
-{/* Right side: form */}
+{/* blur: form */}
 <div className="md:w-1/2 bg-white/10 backdrop-blur-lg mt-24 rounded-xl shadow-lg p-4 w-full max-w-none border border-white/20 h-auto max-h-[550px] overflow-auto z-10">
   <h1 className="text-2xl  text-center text-gray-300 font-garamond text-[#222222] mb-4 border-b border-[#222222] pb-2">
     Freight Claim Recovery Submission

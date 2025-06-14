@@ -12,14 +12,14 @@ import { useLocation } from 'react-router-dom';
 
 
 function App() {
-    const location = useLocation();
+     const location = useLocation();
 
-  // Example: Add a class only for the /place page
   const isPlacePage = location.pathname === '/place';
+  const isContactPage = location.pathname === '/contact';
 
   return (
-    <div className={isPlacePage ? 'place-page' : ''}>
-    <Nav/>
+    <div className={`${isPlacePage ? 'place-page' : ''} ${isContactPage ? 'contact-page' : ''}`}>
+   <Nav/>
       <Routes>
         <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
