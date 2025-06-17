@@ -58,7 +58,7 @@ const togglePopover = () => {
 
 {/* Links */}
 
-<ul className={`lg:flex lg:space-x-8 lg:items-center text-white font-semibold text-base ${menuOpen ? 'block' : 'hidden'} absolute lg:static top-full left-0 w-full lg:w-auto bg-[#1F1E1C] lg:bg-transparent z-40 lg:z-auto transition-all duration-300`}>
+<ul className={`lg:flex lg:space-x-8 lg:items-center text-white font-semibold text-base ${menuOpen ? 'block' : 'hidden'} absolute lg:static top-full left-18 mx-auto w-full lg:w-auto bg-[#1F1E1C] lg:bg-transparent z-40 lg:z-auto transition-all duration-300`}>
   <li className="cursor-pointer transition">
     <Link to="/" className="no-underline text-inherit">HOME</Link>
   </li>
@@ -69,10 +69,7 @@ const togglePopover = () => {
   </li>
 
 
-  <li className="cursor-pointer transition">
-      <Link to="/contact" className="hover:text-gray-300">CONTACT</Link>
-   
-  </li>
+
 {/* SERVICES Popover */}
 <li className="relative" ref={popoverRef}>
   <div
@@ -141,10 +138,15 @@ const togglePopover = () => {
 </li>
 
 
+
       </ul>
     </div>
   )}
 </li>
+  <li className="cursor-pointer transition">
+      <Link to="/contact" className="hover:text-gray-300">CONTACT</Link>
+   
+  </li>
 
 </ul>
 
