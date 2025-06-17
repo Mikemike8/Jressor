@@ -146,12 +146,6 @@ const togglePopover = () => {
   )}
 </li>
 
-   
-
-  {/* Moved this li inside the main ul */}
-  <li className="cursor-pointer hover:text-gray-700 transition">
-    CARRIER VS. GROWING THREAT
-  </li>
 </ul>
 
 {/* Hamburger menu (mobile only) */}
