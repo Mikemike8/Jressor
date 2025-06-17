@@ -6,6 +6,8 @@ import { Link } from 'react-router-dom';
 
 
 export const Nav = () => {
+const [menuOpen, setMenuOpen] = useState(false);
+
 const [popoverActive, setPopoverActive] = useState(false);
 const popoverRef = useRef(null);
 
@@ -56,7 +58,7 @@ const togglePopover = () => {
 
 {/* Links */}
 
-<ul className="flex space-x-8 text-white font-semibold text-base relative">
+<ul className={`lg:flex lg:space-x-8 lg:items-center text-white font-semibold text-base ${menuOpen ? 'block' : 'hidden'} absolute lg:static top-full left-0 w-full lg:w-auto bg-[#1F1E1C] lg:bg-transparent z-40 lg:z-auto transition-all duration-300`}>
   <li className="cursor-pointer transition">
     <Link to="/" className="no-underline text-inherit">HOME</Link>
   </li>
@@ -148,6 +150,30 @@ const togglePopover = () => {
     CARRIER VS. GROWING THREAT
   </li>
 </ul>
+{/* Hamburger menu (mobile only) */}
+<div className="lg:hidden">
+  <button
+    onClick={() => setMenuOpen(!menuOpen)}
+    className="text-white focus:outline-none"
+    aria-label="Toggle menu"
+  >
+    <svg
+      className="w-6 h-6"
+      fill="none"
+      stroke="currentColor"
+      viewBox="0 0 24 24"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="2"
+        d={menuOpen ? "M6 18L18 6M6 6l12 12" : "M4 6h16M4 12h16M4 18h16"}
+      />
+    </svg>
+  </button>
+</div>
+
 
           {/* User icon */}
           <button
