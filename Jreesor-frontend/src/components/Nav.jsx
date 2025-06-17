@@ -85,6 +85,7 @@ const togglePopover = () => {
     <div
       className="
         absolute left-0 mt-2
+        bg-white
         w-40
         rounded-md
         shadow-lg

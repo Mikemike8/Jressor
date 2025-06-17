@@ -122,8 +122,8 @@ export const View = () => {
       <hr className="flex-grow border-t border-white/30" />
     </div>
   </div>
+<div className="w-full px-0 max-w-none mx-0">
 
-  <div className="max-w-5xl mx-auto px-4 text-center ">
     <h2 className="text-6xl font-ebgaramond text-white mb-4 font-oswald">Legal Insights & Updates</h2>
     <p className="text-white font-ebgaramond text-lg leading-relaxed">
       Our team of skilled attorneys and legal professionals is dedicated to providing you with top-tier legal support.
