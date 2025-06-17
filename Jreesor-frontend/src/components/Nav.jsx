@@ -67,9 +67,12 @@ const togglePopover = () => {
     <Link to="/about" className="no-underline text-inherit">ABOUT</Link>
     
   </li>
+
+
+  <li className="cursor-pointer transition">
+      <Link to="/contact" className="hover:text-gray-300">CONTACT</Link>
    
-
-
+  </li>
 {/* SERVICES Popover */}
 <li className="relative" ref={popoverRef}>
   <div
@@ -150,6 +153,7 @@ const togglePopover = () => {
     CARRIER VS. GROWING THREAT
   </li>
 </ul>
+
 {/* Hamburger menu (mobile only) */}
 <div className="lg:hidden">
   <button
@@ -175,7 +179,7 @@ const togglePopover = () => {
 </div>
 
 
-          {/* User icon */}
+{/*       
           <button
             aria-label="Contact"
             className="text-white text-xl opacity-80 hover:text-gray-700 transition-opacity duration-200 focus:outline-none"
@@ -183,7 +187,7 @@ const togglePopover = () => {
             style={{ fontWeight: "300" }}
           >
             <Link to="/contact" className="no-underline text-inherit"> <FaUser /> </Link>
-          </button>
+          </button> */}
         </div>
       </div>
     </nav>
