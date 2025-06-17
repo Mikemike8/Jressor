@@ -67,28 +67,38 @@ export const View = () => {
 
   return (
     <div className="flex flex-col justify-center items-center min-h-screen bg-[#2C2A28] py-12">
-<section className="flex h-[70vh] w-full overflow-hidden">
-  {/* Left Side with Slant */}
+<section className="flex flex-col md:flex-row h-auto md:h-[70vh] w-full overflow-hidden">
+  {/* Left Side with Slant - only slanted on md+ screens */}
   <div
-    className="w-1/2 relative bg-cover bg-center"
+    className="w-full md:w-1/2 relative h-64 md:h-auto bg-cover bg-center"
     style={{
       backgroundImage: `url(${MoneyPile})`,
-      backgroundSize: 'cover',
-      backgroundPosition: 'center',
-      clipPath: 'polygon(0 0, 100% 0, 85% 100%, 0% 100%)',
+      clipPath: 'none',
     }}
   >
-    {/* Optional dark overlay */}
-    <div className="absolute inset-0 bg-black opacity-30"></div>
+    {/* Slant only on larger screens */}
+    <div
+      className="hidden md:block absolute inset-0"
+      style={{
+        clipPath: 'polygon(0 0, 100% 0, 85% 100%, 0% 100%)',
+        backgroundImage: `url(${MoneyPile})`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        zIndex: 1,
+      }}
+    ></div>
+
+    {/* Dark overlay */}
+    <div className="absolute inset-0 bg-black opacity-30 z-10"></div>
   </div>
 
   {/* Right Side - Text Content */}
-  <div className="md:w-1/2 w-full flex items-center justify-center  p-6 md:p-12">
-    <div className=" p-8 md:p-10 max-w-xl w-full text-left">
-      <h2 className="text-3xl md:text-5xl font-extrabold leading-tight tracking-tight text-white font-ebgaramond mb-6">
+  <div className="w-full md:w-1/2 flex items-center justify-center p-6 md:p-12 ">
+    <div className="p-6 sm:p-8 md:p-10 max-w-xl w-full text-left z-20">
+      <h2 className="text-2xl sm:text-3xl md:text-5xl font-extrabold leading-tight tracking-tight text-white font-ebgaramond mb-4 sm:mb-6">
         Know Who Owes You Most
       </h2>
-      <p className="text-base md:text-lg lg:text-xl text-white leading-relaxed font-ebgaramond">
+      <p className="text-sm sm:text-base md:text-lg lg:text-xl text-white leading-relaxed font-ebgaramond">
         Our Top Debtors list highlights companies with the most unpaid accounts—giving you the insights you need to protect your business. Stay ahead. Stay informed. Make smarter credit decisions.
       </p>
     </div>
@@ -99,8 +109,20 @@ export const View = () => {
 
 
 
+
     
         <section className="relative z-10 py-8 ">
+           {/* Divider Line with Subtitle */}
+  <div className="flex items-center justify-center mb-10">
+    <div className="w-full max-w-5xl px-4 flex items-center">
+      <hr className="flex-grow border-t border-white/30" />
+      <span className="mx-4 text-white font-ebgaramond text-lg tracking-wide uppercase">
+        Explore More
+      </span>
+      <hr className="flex-grow border-t border-white/30" />
+    </div>
+  </div>
+
   <div className="max-w-5xl mx-auto px-4 text-center ">
     <h2 className="text-6xl font-ebgaramond text-white mb-4 font-oswald">Legal Insights & Updates</h2>
     <p className="text-white font-ebgaramond text-lg leading-relaxed">
