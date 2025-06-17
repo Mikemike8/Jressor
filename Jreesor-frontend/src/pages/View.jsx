@@ -4,7 +4,7 @@ import { ShieldCheck, UserCheck, MessageSquare, CheckCircle ,AlertCircle  , Plus
 import MoneyPile from '../assets/istockphoto-1294453859-170667a.jpg'
 import  Eagle from '../assets/campaign-creators-gMsnXqILjp4-unsplash.jpg'
 
-
+import "./View.css";
 const faqs = [
   {
     question: "How often is the Top Debtors list updated?",
