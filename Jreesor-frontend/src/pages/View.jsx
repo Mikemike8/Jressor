@@ -171,7 +171,7 @@ export const View = () => {
             <p className="text-center bg-red-600 text-white py-2 rounded">{error}</p>
           ) : (
             <div className="overflow-x-auto">
-               <div className="min-w-[500px]">
+               <div className="min-w-[400px]">
               <table className="min-w-full border border-gray-200 text-left rounded-lg overflow-hidden">
                 <thead>
                   <tr className="bg-gray-100 text-gray-700 font-ebgaramond text-sm">
