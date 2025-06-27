@@ -1,4 +1,7 @@
 import React, { useState } from 'react';
+
+import { Link } from 'react-router-dom';
+
 import "./place.css";
 import ImageBlur from "../assets/gradient.png"
 const Place = () => {
@@ -105,26 +108,26 @@ formDataToUpload.append('metadata', `fullName=${formData.fullName}|companyName=$
           Your contribution strengthens the network and promotes accountability across the board.
         </p>
           {/* Button with rising chart icon */}
-  <a
-    href="#view-debtors"
-    className="mt-8 inline-flex items-center px-6 py-3 ml-38 text-white font-garamond text-lg rounded-lg shadow-lg hover:bg-[#333333] transition-all duration-300"
+ <Link
+  to="/view"
+  className="mt-8 inline-flex items-center px-6 py-3 ml-38 text-white font-garamond text-lg rounded-lg shadow-lg hover:bg-[#333333] transition-all duration-300"
+>
+  View
+  <svg
+    className="w-6 h-6 ml-3"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    viewBox="0 0 24 24"
   >
-      View 
-    <svg
-      className="w-6 h-6 mr-3"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      viewBox="0 0 24 24"
-    >
-      <polyline
-        points="3 17 8 12 13 16 18 9 21 12"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </svg>
-  
-  </a>
+    <polyline
+      points="3 17 8 12 13 16 18 9 21 12"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+  </svg>
+</Link>
+
 
       </section>
 
