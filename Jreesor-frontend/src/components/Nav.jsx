@@ -71,11 +71,15 @@ const togglePopover = () => {
 
 
 {/* SERVICES Popover */}
-<li className="relative" ref={popoverRef}>
+<li
+  className="relative"
+  ref={popoverRef}
+  onMouseEnter={() => setPopoverActive(true)}
+  onMouseLeave={() => setPopoverActive(false)}
+>
   <div
     className="cursor-pointer transition font-semibold text-base flex items-center space-x-1 select-none text-white hover:text-gray-300"
-    onClick={() => setPopoverActive(!popoverActive)}
-    style={{ backgroundColor: 'transparent' }}  // explicitly no bg on SERVICES button
+    style={{ backgroundColor: 'transparent' }}
   >
     <span>SERVICES</span>
     <span className="w-0 h-0 border-l-4 border-l-transparent border-r-4 border-r-transparent border-t-4 border-t-white"></span>
@@ -84,7 +88,7 @@ const togglePopover = () => {
   {popoverActive && (
     <div
       className="
-        absolute left-0 mt-2
+        absolute left-0
         bg-white
         w-40
         rounded-md
@@ -93,57 +97,48 @@ const togglePopover = () => {
         z-50
         overflow-hidden
       "
-      style={{ backgroundColor: 'rgba(33, 37, 41, 0.95)' }} // Bootstrap dark dropdown bg
+      style={{ backgroundColor: 'rgba(33, 37, 41, 0.95)' }}
     >
       <ul className="py-1 text-white text-sm">
-       <li className="px-4 py-2 hover:bg-gray-600 hover:text-white cursor-pointer transition">
-  <Link
-    to="/place"
-    className="no-underline text-white flex items-center space-x-2"
-  >
-    <span>PLACE</span>
-    <svg
-      className="w-5 h-5"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      viewBox="0 0 24 24"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      aria-hidden="true"
-      focusable="false"
-    >
-      <path d="M12 11c1.104 0 2-.896 2-2s-.896-2-2-2-2 .896-2 2 .896 2 2 2z" />
-      <path d="M12 22s8-4.5 8-10a8 8 0 10-16 0c0 5.5 8 10 8 10z" />
-    </svg>
-  </Link>
-</li>
+        <li className="px-4 py-2 hover:bg-gray-600 hover:text-white cursor-pointer transition">
+          <Link to="/place" className="no-underline text-white flex items-center space-x-2">
+            <span>PLACE</span>
+            <svg
+              className="w-5 h-5"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              viewBox="0 0 24 24"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <path d="M12 11c1.104 0 2-.896 2-2s-.896-2-2-2-2 .896-2 2 .896 2 2 2z" />
+              <path d="M12 22s8-4.5 8-10a8 8 0 10-16 0c0 5.5 8 10 8 10z" />
+            </svg>
+          </Link>
+        </li>
 
-    <li className="px-4 py-2 hover:bg-gray-600 hover:text-white cursor-pointer transition">
-  <Link to="/view" className="no-underline text-white flex items-center">
-    VIEW
-    <svg
-      className="w-6 h-6 ml-2"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      viewBox="0 0 24 24"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      aria-hidden="true"
-      focusable="false"
-    >
-      <polyline points="3 17 8 12 13 16 18 9 21 12" />
-    </svg>
-  </Link>
-</li>
-
-
-
+        <li className="px-4 py-2 hover:bg-gray-600 hover:text-white cursor-pointer transition">
+          <Link to="/view" className="no-underline text-white flex items-center">
+            VIEW
+            <svg
+              className="w-6 h-6 ml-2"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              viewBox="0 0 24 24"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <polyline points="3 17 8 12 13 16 18 9 21 12" />
+            </svg>
+          </Link>
+        </li>
       </ul>
     </div>
   )}
 </li>
+
   <li className="cursor-pointer transition">
       <Link to="/contact" className="hover:text-gray-300">CONTACT</Link>
    
