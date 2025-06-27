@@ -131,7 +131,7 @@ export const View = () => {
   </div>
 </section>
 
-
+<div className="overflow-x-hidden">
         <div className="relative">
   {/* Background Image Layer */}
   <div
@@ -208,7 +208,7 @@ export const View = () => {
     </div>
   </div>
 </div>
-
+</div>
 
    
 <section className=" py-16 px-6">
