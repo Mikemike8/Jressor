@@ -66,49 +66,55 @@ export const View = () => {
   }, []);  // Empty dependency array ensures this runs once on mount
 
   return (
-    <div className="flex flex-col justify-center items-center min-h-screen bg-[#2C2A28] py-12">
-<section className="flex flex-col md:flex-row h-auto md:h-[70vh] w-full overflow-hidden">
-  {/* Left Side with Slant - only slanted on md+ screens */}
-  <div
-    className="w-full md:w-1/2 relative h-64 md:h-auto bg-cover bg-center"
-    style={{
-      backgroundImage: `url(${MoneyPile})`,
-      clipPath: 'none',
-    }}
-  >
-    {/* Slant only on larger screens */}
-    <div
-      className="hidden md:block absolute inset-0"
-      style={{
-        clipPath: 'polygon(0 0, 100% 0, 85% 100%, 0% 100%)',
-        backgroundImage: `url(${MoneyPile})`,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        zIndex: 1,
-      }}
-    ></div>
+    <div className="flex flex-col justify-center items-center min-h-screen bg-[#2C2A28] py-12 overflow-x-hidden">
+  <section className="flex flex-col md:flex-row w-full h-auto md:h-[70vh]">
+    
+    {/* Left Side Image with Slant on md+ */}
+    <div className="relative w-full md:w-1/2 h-64 md:h-auto">
+      {/* Base image for all screen sizes */}
+      <div
+        className="absolute inset-0 bg-cover bg-center md:hidden"
+        style={{
+          backgroundImage: `url(${MoneyPile})`,
+          zIndex: 1,
+        }}
+      ></div>
 
-    {/* Dark overlay */}
-    <div className="absolute inset-0 bg-black opacity-30 z-10"></div>
-  </div>
+      {/* Slanted image only for medium screens and up */}
+      <div
+        className="hidden md:block absolute inset-0"
+        style={{
+          clipPath: 'polygon(0 0, 100% 0, 85% 100%, 0% 100%)',
+          backgroundImage: `url(${MoneyPile})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          zIndex: 1,
+        }}
+      ></div>
 
-  {/* Right Side - Text Content */}
-  <div className="w-full md:w-1/2 flex items-center justify-center p-6 md:p-12 ">
-    <div className="p-6 sm:p-8 md:p-10 max-w-xl w-full text-left z-20">
-      <h2 className="text-2xl sm:text-3xl md:text-5xl font-extrabold leading-tight tracking-tight text-white font-ebgaramond mb-4 sm:mb-6">
-        Know Who Owes You Most
-      </h2>
-      <p className="text-sm sm:text-base md:text-lg lg:text-xl text-white leading-relaxed font-ebgaramond">
-        Our Top Debtors list highlights companies with the most unpaid accounts—giving you the insights you need to protect your business. Stay ahead. Stay informed. Make smarter credit decisions.
-      </p>
+      {/* Dark overlay */}
+      <div className="absolute inset-0 bg-black opacity-30 z-10"></div>
     </div>
-  </div>
-</section>
+
+    {/* Right Side Text */}
+    <div className="w-full md:w-1/2 flex items-center justify-center p-6 md:p-12 relative z-20">
+      <div className="p-6 sm:p-8 md:p-10 max-w-xl w-full text-left">
+        <h2 className="text-2xl sm:text-3xl md:text-5xl font-extrabold leading-tight tracking-tight text-white font-ebgaramond mb-4 sm:mb-6">
+          Know Who Owes You Most
+        </h2>
+        <p className="text-sm sm:text-base md:text-lg lg:text-xl text-white leading-relaxed font-ebgaramond">
+          Our Top Debtors list highlights companies with the most unpaid accounts—giving you the insights you need to protect your business. Stay ahead. Stay informed. Make smarter credit decisions.
+        </p>
+      </div>
+    </div>
+
+  </section>
 
 
 
 
 
+<div className="overflow-x-hidden">
 
     
         <section className="relative z-10 py-8 ">
@@ -122,7 +128,8 @@ export const View = () => {
       <hr className="flex-grow border-t border-white/30" />
     </div>
   </div>
-<div className="w-full px-0 max-w-none mx-0">
+<div className="w-full px-4 mx-auto max-w-7xl">
+
 
     <h2 className="text-6xl font-ebgaramond text-white mb-4 font-oswald">Legal Insights & Updates</h2>
     <p className="text-white font-ebgaramond text-lg leading-relaxed">
@@ -130,6 +137,7 @@ export const View = () => {
     </p>
   </div>
 </section>
+</div>
 
 <div className="overflow-x-hidden">
         <div className="relative">
@@ -163,6 +171,7 @@ export const View = () => {
             <p className="text-center bg-red-600 text-white py-2 rounded">{error}</p>
           ) : (
             <div className="overflow-x-auto">
+               <div className="min-w-[500px]">
               <table className="min-w-full border border-gray-200 text-left rounded-lg overflow-hidden">
                 <thead>
                   <tr className="bg-gray-100 text-gray-700 font-ebgaramond text-sm">
@@ -188,6 +197,7 @@ export const View = () => {
                   ))}
                 </tbody>
               </table>
+              </div>
             </div>
           )}
         </div>
@@ -210,7 +220,8 @@ export const View = () => {
 </div>
 </div>
 
-   
+   <div className="overflow-x-hidden">
+
 <section className=" py-16 px-6">
   <div className="max-w-6xl mx-auto text-center mb-12">
     <h2 className="text-6xl font-ebgaramond text-white  font-oswald mb-4">Our legal services.</h2>
@@ -261,6 +272,8 @@ export const View = () => {
     </div>
   </div>
 </section>
+</div>
+<div className="overflow-x-hidden">
 
 <section className=" py-16 px-4">
   <div className="w-[100%] mx-auto px-4 md:px-8">
@@ -287,9 +300,11 @@ export const View = () => {
             )}
           </button>
           <div
-            className={`px-6 pb-4 font-ebgaramond text-md text-white overflow-hidden transition-all duration-300 ease-in-out ${
-              openIndex === index ? "max-h-40 opacity-100" : "max-h-0 opacity-0"
-            }`}
+            className={`px-6 pb-4 font-ebgaramond text-md text-white overflow-hidden transition-all duration-300 ease-in-out 
+              ${
+  openIndex === index ? "max-h-screen opacity-100" : "max-h-0 opacity-0"
+}
+`}
           >
             {faq.answer}
           </div>
@@ -298,6 +313,7 @@ export const View = () => {
     </div>
   </div>
 </section>
+</div>
 
 
 
