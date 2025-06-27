@@ -2,6 +2,8 @@ import React from 'react';
 import './service.css'; 
 import thor from '../assets/reetruckvid.mp4';
 
+import { Link } from 'react-router-dom';
+
 const Hero = () => {
   return (
     <div className="relative w-full min-h-screen overflow-hidden bg-black">
@@ -31,7 +33,7 @@ const Hero = () => {
           className="inline-block mt-6 px-6 py-3 border border-white rounded-full text-white font-ebgaramond 
                      hover:bg-white/20 hover:backdrop-blur-sm hover:text-white transition"
         >
-          Start Collecting Now
+          <Link to="/place" >Start Collecting Now</Link> 
         </a>
       </div>
     </div>
