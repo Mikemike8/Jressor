@@ -170,33 +170,34 @@ export const View = () => {
             <p className="text-center bg-red-600 text-white py-2 rounded">{error}</p>
           ) : (
             <div className="overflow-x-auto">
-               <div className="min-w-[400px]">
-              <table className="min-w-full border border-gray-200 text-left rounded-lg overflow-hidden">
-                <thead>
-                  <tr className="bg-gray-100 text-gray-700 font-ebgaramond text-sm">
-                    <th className="px-6 py-3 border-b ">Rank</th>
-                    <th className="px-6 py-3 border-b ">First Name</th>
-                    <th className="px-6 py-3 border-b ">Last Name</th>
-                    <th className="px-6 py-3 border-b ">Amount Owed</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {debtorData.map((item, index) => (
-                    <tr key={index} className={index % 2 === 0 ? "bg-white" : "bg-gray-50"}>
-                      <td className="px-6 py-3 border-b text-sm text-gray-800">{item.Rank || 'N/A'}</td>
-                      <td className="px-6 py-3 border-b text-sm text-gray-800">{item.FirstName || 'N/A'}</td>
-                      <td className="px-6 py-3 border-b text-sm text-gray-800">{item.LastName || 'N/A'}</td>
-                      <td className={`px-6 py-3 border-b text-sm font-medium ${
-                        item.AmountOwed > 10000 ? 'text-red-600' :
-                        item.AmountOwed > 5000 ? 'text-yellow-600' : 'text-gray-800'
-                      }`}>
-                        {item.AmountOwed !== undefined ? `$${item.AmountOwed.toLocaleString(undefined, {minimumFractionDigits: 2})}` : 'N/A'}
-                      </td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-              </div>
+               <div className="w-full overflow-x-auto">
+  <table className="min-w-full border border-gray-200 text-left rounded-lg overflow-hidden">
+    <thead>
+      <tr className="bg-gray-100 text-gray-700 font-ebgaramond text-xs md:text-sm">
+        <th className="px-4 md:px-6 py-3 border-b">Rank</th>
+        <th className="px-4 md:px-6 py-3 border-b">First Name</th>
+        <th className="px-4 md:px-6 py-3 border-b">Last Name</th>
+        <th className="px-4 md:px-6 py-3 border-b">Amount Owed</th>
+      </tr>
+    </thead>
+    <tbody>
+      {debtorData.map((item, index) => (
+        <tr key={index} className={index % 2 === 0 ? "bg-white" : "bg-gray-50"}>
+          <td className="px-4 md:px-6 py-3 border-b text-xs md:text-sm text-gray-800">{item.Rank || 'N/A'}</td>
+          <td className="px-4 md:px-6 py-3 border-b text-xs md:text-sm text-gray-800">{item.FirstName || 'N/A'}</td>
+          <td className="px-4 md:px-6 py-3 border-b text-xs md:text-sm text-gray-800">{item.LastName || 'N/A'}</td>
+          <td className={`px-4 md:px-6 py-3 border-b text-xs md:text-sm font-medium ${
+            item.AmountOwed > 10000 ? 'text-red-600' :
+            item.AmountOwed > 5000 ? 'text-yellow-600' : 'text-gray-800'
+          }`}>
+            {item.AmountOwed !== undefined ? `$${item.AmountOwed.toLocaleString(undefined, {minimumFractionDigits: 2})}` : 'N/A'}
+          </td>
+        </tr>
+      ))}
+    </tbody>
+  </table>
+</div>
+
             </div>
           )}
         </div>

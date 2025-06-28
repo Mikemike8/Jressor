@@ -8,27 +8,12 @@ import Place from './pages/Place';
 import { View } from './pages/View';
 import Footer from './components/Footer';
 import { useLocation } from 'react-router-dom';
+import { Chat } from './pages/Chat';
 
 
 
 function App() {
-  const [isChatOpen, setIsChatOpen] = useState(false);
-
-const toggleChat = () => {
-  if (window.chatbase) {
-    if (isChatOpen) {
-      window.chatbase('close');
-    } else {
-      window.chatbase('open');
-    }
-    setIsChatOpen(!isChatOpen);
-  }
-};
-
-      useEffect(() => {(function(){if(!window.chatbase||window.chatbase("getState")!=="initialized"){window.chatbase=(...args)=>{if(!window.chatbase.q){window.chatbase.q=[]}window.chatbase.q.push(args)};window.chatbase=new Proxy(window.chatbase,{get(target,prop){if(prop==="q"){return target.q}return(...args)=>target(prop,...args)}})}const onLoad=function(){const script=document.createElement("script");script.src="https://www.chatbase.co/embed.min.js";script.id="g2FhobLszRRQR3leSt02t";script.domain="www.chatbase.co";document.body.appendChild(script)};if(document.readyState==="complete"){onLoad()}else{window.addEventListener("load",onLoad)}})()}, []); // runs only once when component mounts
-  
-  
-     const location = useLocation();
+  const location = useLocation();
 
   const isPlacePage = location.pathname === '/place';
   const isContactPage = location.pathname === '/contact';
@@ -46,6 +31,7 @@ const toggleChat = () => {
 
 
       </Routes>
+      <Chat/>
       <Footer/>
     </div>
   );
